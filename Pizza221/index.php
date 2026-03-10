@@ -1,10 +1,71 @@
+<?php
 
+define('BASE_PATH', __DIR__);  
+define('BASE_URL', '/Pizza221/');
+
+require_once BASE_PATH . '/vendor/autoload.php';
+
+
+use App\BaseTemplate;
+
+
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+
+$uri = str_replace(BASE_URL, '', $uri);
+$uri = '/' . trim($uri, '/');
+
+
+if ($uri === '/') {
+    $uri = '/index.php';
+}
+
+
+switch ($uri) {
+    case '/index.php':
+    case '/':
+        $pageTitle = "Главная - Fashion Store";
+        $content = getHomePage();
+        break;
+    
+    case '/catalog':
+        $pageTitle = "Каталог - Fashion Store";
+        $content = getCatalogPage();
+        break;
+    
+    case '/cart':
+        $pageTitle = "Корзина - Fashion Store";
+        $content = getCartPage();
+        break;
+    
+    default:
+        $pageTitle = "Страница не найдена";
+        http_response_code(404);
+        $content = "
+            <div class='text-center py-5'>
+                <h1>404</h1>
+                <p class='lead'>Страница не найдена</p>
+                <a href='" . BASE_URL . "' class='btn'>Вернуться на главную</a>
+            </div>
+        ";
+        break;
+}
+
+
+$template = BaseTemplate::getTemplate();
+$resultTemplate = sprintf($template, $pageTitle, $content);
+echo $resultTemplate;
+
+
+function getHomePage(): string
+{
+    return "
         <!-- Hero Section -->
         <section class='hero'>
             <h1>Новая коллекция 2025</h1>
             <p>Стильная одежда для повседневной жизни и особых случаев</p>
-            <a class='btn me-2' href='/catalog'>Смотреть каталог</a>
-            <a class='btn btn-outline' href='/sale'>Скидки</a>
+            <a class='btn me-2' href='/Pizza221/catalog'>Смотреть каталог</a>
+            <a class='btn btn-outline' href='/Pizza221/catalog?sale=1'>Скидки</a>
         </section>
 
         <!-- Категории -->
@@ -12,25 +73,25 @@
             <h2 class='section-title'>Категории</h2>
             <div class='row g-3'>
                 <div class='col-6 col-md-3'>
-                    <a href='/catalog?cat=men' class='category-card'>
+                    <a href='/Pizza221/catalog?cat=men' class='category-card'>
                         <div style='background:#e0e0e0;height:150px;border-radius:4px;margin-bottom:0.8rem;display:flex;align-items:center;justify-content:center;font-size:2rem;'>👔</div>
                         <h5>Мужчинам</h5>
                     </a>
                 </div>
                 <div class='col-6 col-md-3'>
-                    <a href='/catalog?cat=women' class='category-card'>
+                    <a href='/Pizza221/catalog?cat=women' class='category-card'>
                         <div style='background:#e0e0e0;height:150px;border-radius:4px;margin-bottom:0.8rem;display:flex;align-items:center;justify-content:center;font-size:2rem;'>👗</div>
                         <h5>Женщинам</h5>
                     </a>
                 </div>
                 <div class='col-6 col-md-3'>
-                    <a href='/catalog?cat=kids' class='category-card'>
+                    <a href='/Pizza221/catalog?cat=kids' class='category-card'>
                         <div style='background:#e0e0e0;height:150px;border-radius:4px;margin-bottom:0.8rem;display:flex;align-items:center;justify-content:center;font-size:2rem;'>🧒</div>
                         <h5>Детям</h5>
                     </a>
                 </div>
                 <div class='col-6 col-md-3'>
-                    <a href='/catalog?cat=accessories' class='category-card'>
+                    <a href='/Pizza221/catalog?cat=accessories' class='category-card'>
                         <div style='background:#e0e0e0;height:150px;border-radius:4px;margin-bottom:0.8rem;display:flex;align-items:center;justify-content:center;font-size:2rem;'>👜</div>
                         <h5>Аксессуары</h5>
                     </a>
@@ -46,8 +107,8 @@
                     <div class='product-card'>
                         <div class='product-image'>👕</div>
                         <div class='card-body'>
-                            <h5 class='card-title'>Футболка  крик dj k@zяvk1</h5>
-                            <p class='card-text'>из кибер волокна которое являеться мочой бамбулби</p>
+                            <h5 class='card-title'>Футболка Basic</h5>
+                            <p class='card-text'>Хлопок, унисекс</p>
                             <div class='product-price'>1 290 ₽</div>
                             <button class='btn'>В корзину</button>
                         </div>
@@ -57,8 +118,8 @@
                     <div class='product-card'>
                         <div class='product-image'>👖</div>
                         <div class='card-body'>
-                            <h5 class='card-title'>Джинсы спортивки йоооо</h5>
-                            <p class='card-text'>кружевные и крутые</p>
+                            <h5 class='card-title'>Джинсы Slim</h5>
+                            <p class='card-text'>Классический крой</p>
                             <div class='product-price'>3 490 ₽</div>
                             <button class='btn'>В корзину</button>
                         </div>
@@ -68,8 +129,8 @@
                     <div class='product-card'>
                         <div class='product-image'>🧥</div>
                         <div class='card-body'>
-                            <h5 class='card-title'>Куртка geek</h5>
-                            <p class='card-text'>невидимость</p>
+                            <h5 class='card-title'>Куртка демисезонная</h5>
+                            <p class='card-text'>Водоотталкивающая</p>
                             <div class='product-price'>5 990 ₽</div>
                             <button class='btn'>В корзину</button>
                         </div>
@@ -79,8 +140,8 @@
                     <div class='product-card'>
                         <div class='product-image'>👟</div>
                         <div class='card-body'>
-                            <h5 class='card-title'>Balenciaga 30k xl</h5>
-                            <p class='card-text'>прибавят 130 см к росту и вы сможете быть 170!!!</p>
+                            <h5 class='card-title'>Кроссовки Urban</h5>
+                            <p class='card-text'>Удобная подошва</p>
                             <div class='product-price'>4 290 ₽</div>
                             <button class='btn'>В корзину</button>
                         </div>
@@ -88,6 +149,22 @@
                 </div>
             </div>
         </section>
-<footer class="mt-5">
-                © 2025 «Кемеровский кооперативный техникум»
-            <footer></footer>
+    ";
+}
+
+function getCatalogPage(): string
+{
+    return "
+        <h1 class='mb-4'>Каталог товаров</h1>
+        <p>Здесь будет полный каталог товаров...</p>
+    ";
+}
+
+function getCartPage(): string
+{
+    return "
+        <h1 class='mb-4'>Корзина</h1>
+        <p>Ваша корзина пуста</p>
+        <a href='/Pizza221/' class='btn'>Вернуться к покупкам</a>
+    ";
+}

@@ -17,11 +17,19 @@ class BaseTemplate
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">
-                    <img src="/assets/images/logo.png" alt="Логотип компании" width="64" height="64">
-                    ПИЦЦЕРИЯ ИС-221
+        <nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="/assets/images/logo.png" 
+                 alt="Fashion Store Logo" 
+                 width="40" 
+                 height="40"
+                 onerror="this.style.display='none'">
+            FASHION STORE
+        </a>
+        <!-- остальной код меню -->
+    </div>
+</nav>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
                         data-bs-target="#navbarNav" aria-controls="navbarNav" 
