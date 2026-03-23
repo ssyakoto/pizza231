@@ -1,12 +1,10 @@
 <?php
 namespace App\Controllers;
-
 use App\Views\ProductTemplate;
 
 class ProductController {
-    
-    // Мок-данные товаров (замените на БД при необходимости)
-    private function getProducts(): array {
+    // Измените private на public
+    public function getProducts(): array {
         return [
             1 => [
                 'id' => 1,
@@ -50,20 +48,16 @@ class ProductController {
             ]
         ];
     }
-    
-    // Страница каталога товаров
+
     public function index(): string {
         return ProductTemplate::getCatalog($this->getProducts());
     }
-    
-    // Страница конкретного товара
+
     public function show(int $id): string {
         $products = $this->getProducts();
-        
         if (!isset($products[$id])) {
             return ProductTemplate::getNotFound($id);
         }
-        
         return ProductTemplate::getProductCard($products[$id]);
     }
 }
