@@ -1,0 +1,25 @@
+{
+    "hero": {
+        "title": "spin4spin",
+        "subtitle": "",
+        "catalogButton": "Каталог"
+    },
+    "features": {
+        "title": "новая колекция",
+        "items": [
+            "carhartt vista jacet",
+            "alyx 1017 9sm",
+            "Balenciaga 3xl"
+        ]
+    },
+    "catalog": {
+        "title": "Каталог",
+        "noProducts": "Товары временно отсутствуют",
+        "noName": "Без названия",
+        "detailsButton": "Подробнее",
+        "currency": "₽"
+    },
+    "image": {
+        "alt": "Запчасти"
+    }
+}
