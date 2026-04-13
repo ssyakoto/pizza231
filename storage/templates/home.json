@@ -5,7 +5,7 @@
         "catalogButton": "Каталог"
     },
     "features": {
-        "title": "новая колекция",
+        "title": "Новая колекция",
         "items": [
             "carhartt vista jacet",
             "alyx 1017 9sm",
@@ -20,6 +20,6 @@
         "currency": "₽"
     },
     "image": {
-        "alt": "Запчасти"
+        "alt": ""
     }
 }

@@ -91,11 +91,11 @@ h1, h2, h3, h4, h5, h6 {
     padding: 100px 0;
     border-radius: 0 0 20px 20px;
     margin-bottom: 30px;
-    color: #fff;
+    color: #790000;
 }
 
 .hero-section h1, .hero-section p {
-    color: #fff !important;
+    color: #784cdf !important;
 }
 
 /* === Список === */
@@ -106,12 +106,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* === Кнопки === */
 .btn {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgb(50, 34, 194);
     transition: all 0.2s ease;
 }
 
 .btn:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgb(47, 0, 255);
     transform: translateY(-2px);
 }
 
@@ -137,7 +137,7 @@ input, textarea, select {
 }
 
 input:focus, textarea:focus, select:focus {
-    border-color: #0d6efd !important;
+    border-color: #4582df !important;
     box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
@@ -152,7 +152,7 @@ input:focus, textarea:focus, select:focus {
 
 /* === Бейджи === */
 .badge.bg-success {
-    background: #198754 !important;
+    background: #2c1fdd !important;
 }
 
 /* === Таблица корзины === */
@@ -175,7 +175,7 @@ input:focus, textarea:focus, select:focus {
 .quantity-input {
     background-color: #fff !important;
     border-color: #ced4da !important;
-    color: #212529 !important;
+    color: #255f99 !important;
 }
 
 .quantity-input::-webkit-outer-spin-button,

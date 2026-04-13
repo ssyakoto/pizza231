@@ -184,7 +184,7 @@ const CartManager = {
                 <tr>
                     <td colspan="5" class="text-center py-5">
                         <i class="bi bi-cart-x display-1 text-muted mb-3"></i>
-                        <h4>Корзина пуста 😔</h4>
+                        <h4>Корзина пуста </h4>
                         <p class="text-muted">Добавьте товары из каталога</p>
                         <a href="/catalog" class="btn btn-primary mt-2">Перейти в каталог</a>
                     </td>

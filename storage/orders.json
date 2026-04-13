@@ -279,5 +279,27 @@
         "total": 102000,
         "status": "new",
         "user_id": 0
+    },
+    {
+        "id": "order_69dc753b66f65",
+        "created_at": "2026-04-13 06:46:51",
+        "fio": "gavrik",
+        "email": "admin@example.com",
+        "phone": "+79059000687",
+        "address": "защеканская 12",
+        "payment": "cash",
+        "items": [
+            {
+                "id": 1,
+                "name": "Protocol Index Black Reconstructed Sweatshirts Zip Hoodie",
+                "price": 45000,
+                "image": "\/assets\/img\/1.jpg",
+                "quantity": 1,
+                "added_at": 1776055596
+            }
+        ],
+        "total": 45000,
+        "status": "new",
+        "user_id": 0
     }
 ]
